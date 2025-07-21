@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FitFactory | Shop</title>
+ 
+  <style>
+  </style>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+  <header>
+   FitFactory
+  </header>
+
+  <main>
+    <h1>Shop Supplements & Equipment</h1>
+    <div class="products">
+      <div class="product">
+        <img src="C:\fitwith.ritesh\protine.jpg" alt="Whey Protein" />
+        <h3>Whey Protein (Chocolate)</h3>
+        <p class="price">₹2,499</p>
+        <button class="btn" onclick="payNow('Whey Protein (Chocolate)', 249900)">
+          Buy Now
+        </button>
+      </div>
+      <div class="product">
+        <img src=https://images-static.nykaa.com/media/catalog/product/0/9/09607788939111430302_1.jpg alt="Creatine Monohydrate" />
+        <h3>Creatine Monohydrate</h3>
+        <p class="price">₹999</p>
+        <button class="btn" onclick="payNow('Creatine Monohydrate', 99900)">
+          Buy Now
+        </button>
+      </div>
+
+      <div class="product">
+        <img src="https://d2d21jw8en5l3a.cloudfront.net/vendty2_db_41754_merc2021/imagenes_productos/543_bcaa_glutamine_25_servicios_limon_sascha_fitness_imagen.jpeg" alt="BCAA Energy (Watermelon)" />
+        <h3>BCAA Energy (Watermelon)</h3>
+        <p class="price">₹1,299</p>
+        <button class="btn" onclick="payNow('BCAA Energy (Watermelon)', 129900)">
+          Buy Now
+        </button>
+      </div>
+
+      <div class="product">
+        <img src="https://cdn.muscleandstrength.com/store/media/catalog/product/cache/all/image/700x700/602f0fa2c1f0d1ba5e241f914e856ff9/a/l/allmax-impact-xtreme-pm_1.jpg" alt="Pre-Workout Booster" />
+        <h3>Pre-Workout Booster</h3>
+        <p class="price">₹1,499</p>
+        <button class="btn" onclick="payNow('Pre-Workout Booster', 149900)">
+          Buy Now
+        </button>
+      </div>
+
+      <div class="product">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.EUqYevSrdFJDhLQoPgXlMgHaFI?pid=Api&P=0&h=220" alt="Adjustable Dumbbell Set" />
+        <h3>Adjustable Dumbbell Set</h3>
+        <p class="price">₹3,999</p>
+        <button class="btn" onclick="payNow('Adjustable Dumbbell Set', 399900)">
+          Buy Now
+        </button>
+      </div>
+
+      <div class="product">
+        <img src="https://antsll.com/wp-content/uploads/2023/10/shopitistic-resistance-bands-150-lbs-gym-fitness-resistance-bands-set-12-pcs-29032567537821-768x768.jpg"alt="Resistance Bands Set" />
+        <h3>Resistance Bands Set</h3>
+        <p class="price">₹799</p>
+        <button class="btn" onclick="payNow('Resistance Bands Set', 79900)">
+          Buy Now
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    function payNow(productName, amountPaise) {
+      const options = {
+        key: 'YOUR_RAZORPAY_KEY_ID', 
+        amount: amountPaise, 
+        currency: 'INR',
+        name: 'FitFactory',
+        description: productName,
+        handler: function (response) {
+          alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+        },
+        prefill: {
+          name: '',
+          email: '',
+          contact: ''
+        },
+        theme: { color: '#1e90ff' }
+      };
+      const rzp = new Razorpay(options);
+      rzp.open();
+    }
+  </script>
+  <div class="nav-buttons"></div>
+  <a href="gallery.html" class="btn">← Back</a>
+  <a href="contact.html" class="btn">Next →</a>
+</body>
+</html>
